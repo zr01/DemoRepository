@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<title>Allan's Magic 8 Ball!</title>
+
+<!-- JS Scripts -->
+<script src="webjars/angularjs/1.4.7/angular.min.js"></script>
+<script src="webjars/angular-base64/2.0.4/angular-base64.min.js"></script>
+
+<!-- Bootstrap for the UI -->
+<link href="webjars/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+
+<!-- Controller -->
+<script src="js/main.js"></script>
+</head>
+
+<body ng-app="magic8Ball">
+	<div class="container">
+		<div ng-controller="main" ng-cloak class="cloak">
+			<div class="row">
+				<div class="col-md-10">
+					<h1>The rules are simple, ask the Magic 8 Ball any question that can be answered by Yes or No. Enjoy!</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<img src="img/m8ball.png">
+				</div>
+				<div class="col-md-5">
+					<input class="form-control" type="text" ng-model="question" name="question" placeholder="What is your question?"/>
+				</div>
+				<div class="col-md-2">
+					<input type="submit" class="btn btn-default" ng-click="ask()" value="Ask!"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10">
+					<div class="alert {{alertType}}">{{answer}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
